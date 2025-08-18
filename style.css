@@ -4,6 +4,10 @@
     font-family: 'Galindo', 'ubuntu', 'system-ui';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+  
 /* Inicio da Navegação */
 .navegacao {
     position: sticky;
@@ -32,18 +36,27 @@
     border-radius: 10px;
     font-size: 20px;
 }
-.navegacao li:hover {
+
+.navegacao a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  .navegacao a:hover {
     background-color: #cbade4;
     border-bottom: 2px solid #000;
-    padding-bottom: 5px;
-}
+  }
+  
 /* Fim da Navegação */
 
 /* Inicio da Home */
 .home-all {
     display: flex;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 90px;
     justify-content: center;
     gap: 150px;
 }
@@ -74,3 +87,69 @@
 }
 /* Fim da Home */
 
+/* Inicio Galeria */
+#galeria {
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+  
+#galeria h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+  
+.galeria {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Fim Galeria */
+
+/* Inicio Contato */
+
+#contato {
+    padding: 60px 20px;
+    text-align: center;
+}
+  
+#contato h2 {
+    font-size: 36px;
+    margin-bottom: 100px;
+}
+  
+.form-contato {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+  
+.form-contato input,
+.form-contato textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+  
+.form-contato button {
+    padding: 12px;
+    background: #cbade4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+    width: 530px;
+}
+  
+.form-contato button:hover {
+    background: #b48ad8;
+}
+/* Fim Contato */
+
+/* =========================
+   Versão Mobile
+   ========================= */
