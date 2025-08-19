@@ -1,43 +1,71 @@
-* {
+/* ================================
+   Reset & Globais
+   ================================ */
+   * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Galindo', 'ubuntu', 'system-ui';
-}
-
-html {
-    scroll-behavior: smooth;
-}
+  }
   
-/* Inicio da Navegação */
-.navegacao {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* impede scroll lateral */
+    scroll-behavior: smooth;
+  }
+  
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* ================================
+     Navegação
+     ================================ */
+  .navegacao {
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: #ddc6ed;
-}
-.navegacao ul {
+  }
+  
+  .navegacao nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  
+  .navegacao ul {
     display: flex;
     list-style: none;
     justify-content: center;
-    width: 90%;
-    gap:10%;
+    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
     padding: 10px 20px;
-}
-
-.navegacao li {
+  }
+  
+  .navegacao li {
     display: flex;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     height: 40px;
-    width: 80px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    border-radius: 10px;
+    width: auto;
+    min-width: 60px;
     font-size: 20px;
-}
-
-.navegacao a {
+  }
+  
+  .navegacao a {
     text-decoration: none;
     color: #000;
     font-size: 20px;
@@ -50,91 +78,104 @@ html {
     border-bottom: 2px solid #000;
   }
   
-/* Fim da Navegação */
-
-/* Inicio da Home */
-.home-all {
+  /* ================================
+     Home
+     ================================ */
+  .home-all {
     display: flex;
     align-items: center;
     margin-top: 90px;
     justify-content: center;
-    gap: 150px;
-}
-
-.home-text h1 {
+    gap: 5vw;              /* relativo à tela */
+    flex-wrap: wrap;       /* quebra se faltar espaço */
+    padding: 0 15px;
+  }
+  
+  .home-text h1 {
     font-size: 48px;
-}
-
-.home-text h3 {
+  }
+  
+  .home-text h3 {
     font-size: 32px;
-    color:rgb(131, 131, 131)
-}
-
-.home .img-avatar {
+    color: rgb(131, 131, 131);
+  }
+  
+  .img-avatar img {
     border-radius: 50%;
     object-fit: cover;
-}
-
-.home-btn button {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .home-btn button {
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px;
     margin-top: 10px;
-}
-.home-btn button:hover {
+  }
+  
+  .home-btn button:hover {
     transform: scale(1.2);
-}
-/* Fim da Home */
-
-/* Inicio Galeria */
-#galeria {
+  }
+  
+  /* ================================
+     Galeria
+     ================================ */
+  #galeria {
     padding: 60px 20px;
     text-align: center;
     margin-top: 50px;
-}
+  }
   
-#galeria h2 {
+  #galeria h2 {
     font-size: 36px;
     margin-bottom: 50px;
-}
+  }
   
-.galeria {
-    max-width: 1200px;
+  .galeria {
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-}
-/* Fim Galeria */
-
-/* Inicio Contato */
-
-#contato {
+    overflow: hidden;
+  }
+  
+  .galeria iframe {
+    width: 100% !important;
+    height: 500px;
+  }
+  
+  /* ================================
+     Contato
+     ================================ */
+  #contato {
     padding: 60px 20px;
     text-align: center;
-}
+  }
   
-#contato h2 {
+  #contato h2 {
     font-size: 36px;
     margin-bottom: 100px;
-}
+  }
   
-.form-contato {
+  .form-contato {
     max-width: 500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
+  }
   
-.form-contato input,
-.form-contato textarea {
+  .form-contato input,
+  .form-contato textarea {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
     width: 100%;
-}
+  }
   
-.form-contato button {
+  .form-contato button {
     padding: 12px;
     background: #cbade4;
     border: none;
@@ -142,14 +183,102 @@ html {
     cursor: pointer;
     font-size: 18px;
     transition: background 0.3s;
-    width: 530px;
-}
+    width: 100%;
+    max-width: 530px;
+    margin: 0 auto;
+  }
   
-.form-contato button:hover {
+  .form-contato button:hover {
     background: #b48ad8;
-}
-/* Fim Contato */
-
-/* =========================
-   Versão Mobile
-   ========================= */
+  }
+  
+  /* ================================
+     Mobile (até 768px)
+     ================================ */
+  @media (max-width: 768px) {
+  
+    /* Menu */
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navegacao ul {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      background: #ddc6ed;
+      padding: 20px 0;
+    }
+  
+    .navegacao ul.active {
+      display: flex;
+    }
+  
+    .navegacao li {
+      width: 100%;
+      font-size: 18px;
+    }
+  
+    /* Home */
+    .home-all {
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 40px;
+      text-align: center;
+    }
+  
+    .home-text h1 {
+      font-size: 24px;
+    }
+  
+    .home-text h3 {
+      font-size: 16px;
+    }
+  
+    .img-avatar img {
+      width: 70%;
+      max-width: 220px;
+      height: auto;
+    }
+  
+    .home-btn button img {
+      width: 24px;
+      height: 24px;
+    }
+  
+    /* Galeria */
+    #galeria {
+      padding: 40px 10px;
+    }
+  
+    #galeria h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+  
+    .galeria iframe {
+      height: 300px !important;
+    }
+  
+    /* Contato */
+    #contato {
+      padding: 40px 10px;
+    }
+  
+    #contato h2 {
+      font-size: 26px;
+      margin-bottom: 40px;
+    }
+  
+    .form-contato {
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .form-contato button {
+      width: 100%;
+    }
+  }
+  
